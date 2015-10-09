@@ -8,7 +8,7 @@ from Constants import *
 # You control a snake with the directional arrows (left, right, up, down) and grow as you eat.
 # If you bump into a wall or part of yourself, you lose! (Or at least, you should!
 # You can learn more about this game here: https://en.wikipedia.org/wiki/Snake_(video_game)
-
+Blocksize= .5
 # Comments are preceded by a pound sign (#).
 # There will be commented blocks with questions throughout the code.
 # These questions come in two flavors:
@@ -38,7 +38,7 @@ def initWalls(screen):
 
     # Draw the walls
     for wall in walls:
-        pygame.draw.rect(screen, (0, 0, 255), wall)
+        pygame.draw.rect(screen, (255, 255, 255), wall)
 
 
 # Useful debug method. Text is a string, rect is a Rect.
@@ -49,7 +49,7 @@ def printRect(text, rect):
 def quitGame():
     print "Game over!"
     # How can we measure the player's score?
-    print "Your score is: "
+    print "Your score is: " + Score
     sys.exit(0)
 
 # Code to move the head.
@@ -89,17 +89,17 @@ def draw(oldPiece, head, body, appleRect, hasEaten, screen):
 
 
     # Draw the head.
-    pygame.draw.rect(screen, (0, 255, 0), head)
+    pygame.draw.rect(screen, (255, 255, 255), head)
     # Draw the body.
     for block in body:
-        pygame.draw.rect(screen, (0, 155, 0), block)
+        pygame.draw.rect(screen, (255, 255, 255), block) or          pygame.draw.rect(screen, (0, 0, 255), block)
 
     # If we have not eaten, we need to clear the old rectangle.
     if (not hasEaten):
         pygame.draw.rect(screen, (0, 0, 0), oldPiece)
 
     # Draw the apple.
-    pygame.draw.rect(screen, (255, 0, 0), appleRect)
+    pygame.draw.rect(screen, (255, 255, 255), appleRect)
 
 
 

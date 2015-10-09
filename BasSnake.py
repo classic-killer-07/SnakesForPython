@@ -5,13 +5,13 @@ from random import randint
 from pygame.locals import *
 from Helpers import *
 from Constants import *
-
+from hasEaten
 
 
 # This is the head of the snake.
 # What type is it?!?!
 snakeHead = Rect(blockSize, blockSize, blockSize, blockSize)
-apple2 = randomRect()
+
 # This is the body of the snake.
 # These brackets mean that the body is a list;
 # In other words, there might be many parts to the body.
